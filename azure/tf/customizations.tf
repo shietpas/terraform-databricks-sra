@@ -53,7 +53,7 @@ module "sat" {
   # Update this as needed
   catalog_name = local.sat_catalog.catalog_name
 
-  tenant_id                       = data.azurerm_client_config.current.tenant_id
+  tenant_id                       = var.tenant_id  #data.azurerm_client_config.current.tenant_id
   subscription_id                 = var.subscription_id
   databricks_account_id           = var.databricks_account_id
   schema_name                     = var.sat_configuration.schema_name

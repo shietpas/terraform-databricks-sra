@@ -237,6 +237,11 @@ variable "tags" {
   default     = {}
 }
 
+variable "tenant_id" {
+  type        = string
+  description = "(Required) Azure Tenant ID to deploy into"
+}
+
 variable "subscription_id" {
   type        = string
   description = "(Required) Azure Subscription ID to deploy into"
