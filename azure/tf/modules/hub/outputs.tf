@@ -39,7 +39,8 @@ output "ipgroup_id" {
 }
 
 output "metastore_id" {
-  value       = length(databricks_metastore.this) > 0 ? databricks_metastore.this[0].id : null
+  #value       = length(databricks_metastore.existing) > 0 ? databricks_metastore.existing[0].id : null
+  value       = data.databricks_metastore.existing.id
   description = "The unique ID of the Databricks Metastore."
 }
 

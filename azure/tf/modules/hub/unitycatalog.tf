@@ -1,11 +1,14 @@
 # Define a Databricks Metastore resource
-resource "databricks_metastore" "this" {
-  count = var.is_unity_catalog_enabled ? 1 : 0
+# resource "databricks_metastore" "this" {
+#  count = var.is_unity_catalog_enabled ? 1 : 0
+#  name = "uc-metastore-${var.resource_suffix}"
+#  # owner         = "uc admins"
+#  region        = var.location
+#  force_destroy = true
+#}
 
-  name = "uc-metastore-${var.resource_suffix}"
-  # owner         = "uc admins"
-  region        = var.location
-  force_destroy = true
+data "databricks_metastore" "existing" {
+  name = "dadp-sandbox-metastore"
 }
 
 resource "databricks_group" "this" {
